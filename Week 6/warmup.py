@@ -35,11 +35,12 @@ around for an exit!\n
 """)
 print ("How would you like to begin?")
 while 1 != roll:
-    print("""Q - Get out of here!
-    W - Walk forward
-    A - Walk left
-    S - Walk backwards
-    D - Walk right""")
+    print("""
+Q - Get out of here!
+W - Walk forward
+A - Walk left
+S - Walk backwards
+D - Walk right""")
     print(f"Your health is {str(playerHealth)}")
     choice = input(">>> ").strip().upper()
     if "Q" == choice:
@@ -77,9 +78,10 @@ while 1 != roll:
                 if 0 >= playerHealth:
                     continue
                 print(f"The {monsterName} hits you for {damage} damage! Your health is now {playerHealth}.")
-                print("""What do you do?
-                A - Attack
-                R - Run""")
+                print("""
+What do you do?
+A - Attack
+R - Run""")
                 fightChoice = input(">>> ").strip().upper()
                 if "A" == fightChoice:
                     damage = random.randint(1, 5)
@@ -94,6 +96,8 @@ while 1 != roll:
                     damage = random.randint(1, 5)
                     playerHealth -= damage
                     print(f"You're hesitant nature got you punched in the face. {damage} damage.")
+                if 0 >= monsterHealth:
+                    print(f"You killed the {monsterName}! You know those things have souls, right?")
     else:
         print("wut?")
     if 0 == int(playerHealth):
