@@ -1,5 +1,6 @@
 import random
 import sys
+import time
 
 # move around the dungeon until the exit is actually found
 # monsters to hunt
@@ -70,7 +71,40 @@ D - Walk right""")
             playerHealth += random.randint(1, 5) if bool(random.random()) else -random.randint(1, 5)
         elif roll in range(50, 66):
             monsterName = random.choice(["Wumpus", "Chungus", "Milhouse"])
-            print(f"A wild {monsterName} appears!")
+            if "Wumpus" == monsterName:
+                print("You hear a terrifying growl...")
+                time.sleep(1)
+                print("It's getting louder...")
+                time.sleep(2)
+                print("""It's the Wumpus!!!
+           ________           
+          /        \`         
+         /         #\         
+        /            \        
+      `/              \       
+      /                \      
+     /                  \     
+   `/      ._    _       \    
+  `/       / \  / \       \   
+  /       #\@/  \@/        \  
+  |    _             :_    |  
+  |   / |            |.\   |  
+  |  /  |            | `\  |  
+  |  |  |  ________  |  |  |  
+  |  |  | / # # # #\ |  |  |  
+  |  |  |/          \|  |  |  
+  |  |  |\          /|  |  |  
+  |  |  | \_#_#_#_#/ |  |  |  
+  |  |  |            |  |  |  
+  \  \  `\          /  `|  /  
+   \  \   \________/   / ,/   
+    \  \   ,`,`,`,`   /  /`   
+     /  \           `/  \     
+    /    \         `/    \    
+   /  /\  \`      `/  /\  \   
+  /__/ `\__\      /__/  \__\   """)
+            else:
+                print(f"A wild {monsterName} appears!")
             monsterHealth : int = random.randint(7, 15)
             while monsterHealth > 0 and playerHealth > 0:
                 damage = random.randint(1, 5)
