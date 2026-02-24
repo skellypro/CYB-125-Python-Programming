@@ -75,8 +75,12 @@ D - Walk right""")
                 print("You hear a terrifying growl...")
                 time.sleep(1)
                 print("It's getting louder...")
+                print("You see a shadow in the distance...")
+                time.sleep(1)
+                print("It's getting closer...")
+                print("You can make out the shape of a giant monster...")
                 time.sleep(2)
-                print("""It's the Wumpus!!!
+                print("""It's the Wumpus!!!\n
            ________           
           /        \`         
          /         #\         
@@ -134,6 +138,6 @@ R - Run""")
                     print(f"You killed the {monsterName}! You know those things have souls, right?")
     else:
         print("wut?")
-    if 0 == int(playerHealth):
+    if 0 >= int(playerHealth):
         print("Thou art dead. You Lose! Good day sir!")
         sys.exit()
