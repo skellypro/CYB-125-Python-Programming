@@ -13,5 +13,5 @@ for server in servers:
         # Scanning {server} on port x
         if port in unsecure_ports:
             print("Found insecure port on", server, "port number", port)
-        else:
-            print("Scanning", server, "on port", port)
+            continue
+        print("Scanning", server, "on port", port)
