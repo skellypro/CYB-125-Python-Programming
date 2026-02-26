@@ -9,7 +9,7 @@ unsecure_ports = [20,21,22,23,25,53,80,110,135,137,139,143,445,520,1080,1900,800
 for server in servers:
 # and loops through a range of common ports (80-84)
     for port in common_ports:
-        #output to look like the following:
+        # output to look like the following:
         # Scanning {server} on port x
         if port in unsecure_ports:
             print("Found insecure port on", server, "port number", port)
